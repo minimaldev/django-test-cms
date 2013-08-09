@@ -1,0 +1,28 @@
+{% load static %}{% get_static_prefix as STATIC_PREFIX %}
+{% load url from future %}
+{% load mptt_tags %}
+{% load cache %}
+
+{% recursetree menu_items %}
+    <li>
+        <a href="{% url "apps.pages.views.custom_page" slug=node.slug %}"
+       
+        {% if slug == node.slug %} 
+                    class="active {{other_class}}"
+                    {% else %} 
+                    class="{{other_class}}" 
+                {% endif %}  
+       >
+   			{{node.title}}
+   		</a>            
+        {% if not node.is_leaf_node %}
+            <ul class="children">
+                {{ children }}
+            </ul>
+        {% endif %}
+    </li>
+{% endrecursetree %}
+
+
+
+

@@ -1,0 +1,25 @@
+{
+	"pages":
+	[
+		{
+			"modules":
+			[
+				{
+					"name":"blog Single Article",
+					"location":"apps.blog.views",
+					"viewname":"article"
+				},
+				{
+					"name":"blog Single Category",
+					"location":"apps.blog.views",
+					"viewname":"category"
+				},
+				{
+					"name":"blog Single video",
+					"location":"apps.blog.views",
+					"viewname":"video"
+				}
+			]
+		}
+	]
+}

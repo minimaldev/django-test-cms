@@ -1,0 +1,15 @@
+{% load static %}{% get_static_prefix as STATIC_PREFIX %}
+{% load url from future %}
+{% load mptt_tags %}
+{% recursetree comments %}
+    <li>
+        
+   			{{node.email}} - {{node.comment}}
+   		        
+        {% if not node.is_leaf_node %}
+            <ul class="children">
+                {{ children }}
+            </ul>
+        {% endif %}
+    </li>
+{% endrecursetree %}

@@ -1,0 +1,152 @@
+{% extends "admin/index.html" %}
+{% load i18n %}
+{% load url from future %}
+{% load set_var increment  %}
+{% block extrafooter %}
+	<script src="{{STATIC_URL}}js/mediamanager/mediamanager.js"></script>
+{% endblock %}
+{% block extrastyle %}
+  <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/mediamanager.css">
+{% endblock %}
+ 
+{% if not is_popup %}
+  {% block breadcrumbs %}
+  <ul class="breadcrumb">
+	  <li>
+	    	{% if is_popup == True %}
+		    	<a href="{% url "admin:mediamanager" %}?popup={{is_popup}}"> 
+            {% else %}
+            	<a href="{% url "admin:mediamanager" %}">
+            {% endif %} 
+	    	{% trans 'Home' %}
+	    </a>
+	    <span class="divider">/</span> 
+	  </li>
+	  {% if breadcrumbs|length > 0 %}
+		{% for breadcrumb in breadcrumbs %}    
+		{% if breadcrumbs|length != breadcrumb.index  %}	
+		    <li>
+		    	{% if is_popup == True %}
+		    		<a href="{% url "admin:mediamanager" slug=breadcrumb.parent_url %}?popup={{is_popup}}"> 
+             	{% else %}
+               		<a href="{% url "admin:mediamanager" slug=breadcrumb.parent_url %}">
+            	{% endif %} 
+			 
+			    	{{breadcrumb.current_item}}
+			    </a>
+			   <span class="divider">/</span> 		   
+			</li>
+		{% else %}
+			<li class="active">{{breadcrumb.current_item}}</li>
+		{% endif %}
+	    {% endfor %}
+     {% endif %}
+  </ul>
+  {% endblock %}
+{% endif %}
+{% block content %}
+<div class="row-fluid">
+  <div class="span12"> 
+  	<div class="page-header">
+  		<h1>{% trans 'MEDIA MANAGER' %}</h1>
+  	</div>
+   {% if dir_exists == True %}
+	<div class="span12"> 
+		{% if is_popup == True %}
+			<form class="span4" action="{% url "admin:mediamanager_create_directory" slug=slug %}?popup={{is_popup}}"  method="post">
+        {% else %}
+            <form class="span4" action="{% url "admin:mediamanager_create_directory" slug=slug %}"  method="post">
+        {% endif %} 
+
+	               
+	      <input id="id_name" name="name" type="text">
+	      <input id="id_popup" name="popup" value="{{is_popup}}" type="hidden">
+	      {% csrf_token %}
+	       
+	    
+	      <button style="margin-bottom:10px;" class="btn" type="submit">{% trans 'Create Directory' %}</button>
+	    </form>
+	   	
+	   	{% if is_popup == True %}
+			<form enctype="multipart/form-data" action="{% url "admin:mediamanager_upload_file" slug=slug %}?popup={{is_popup}}" method="post">
+        {% else %}
+            <form enctype="multipart/form-data" action="{% url "admin:mediamanager_upload_file" slug=slug %}" method="post">
+        {% endif %} 
+
+		{% csrf_token %}
+		<a style="vertical-align:top;" id="selectitem"  class="selectmediaItem btn btn-primary"><i class="icon-search icon-white"></i> {% trans 'Select File' %}</a>&nbsp;
+		{{ upload_form.myfile }}
+		<button style="margin-bottom:10px;" class="btn" type="submit">{% trans 'Upload' %}</button>
+	</form>
+	</div>
+
+ 
+   {% if directories|length > 0 or files|length > 0 %}
+    <ul class="thumbnails clearfix">
+    <!--list directory-->
+    {% for directory in directories %}
+	  <li class="span2">
+	  	<div class="thumbnail">
+	  	{% if is_popup == True %}
+	  		 <a href="{% url "admin:mediamanager" slug=directory.slug %}?popup={{is_popup}}">
+        {% else %}
+            <a href="{% url "admin:mediamanager" slug=directory.slug %}">
+        {% endif %} 
+		     <img src="{{MEDIA_URL}}images/directory.png" alt="{{directory.name}}" />
+		   </a>
+		   <h6>{{directory.filename}}</h6>
+		{% if is_popup == True %}
+	  		<a class="btn btn-danger" href="{% url "admin:mediamanager_delete_files" slug=slug filename=directory.name %}?popup={{is_popup}">
+        {% else %}
+            <a class="btn btn-danger" href="{% url "admin:mediamanager_delete_files" slug=slug filename=directory.name %}">
+        {% endif %} 
+		  
+		    	{% trans 'Delete' %}
+		   </a>
+	    </div>
+	  </li>
+	{% endfor %}
+	<!--end list directory-->
+	<!--list images-->
+	{% for myfile in files %}
+	  <li class="span2">
+	  	<div class="thumbnail">
+		 	<a href="{{MEDIA_URL}}uploads/{{slug}}{{myfile.name}}" target="_blank">
+		     <img src="{{MEDIA_URL}}uploads/{{slug}}{{myfile.name}}" width="250px" alt="{{directory.name}}" />
+		    </a>
+		   <h6>{{myfile.filename}}</h6>
+            {% if is_popup == True %}
+                 <a class="selectItem btn btn-info"  target="_blank"  href="{{MEDIA_URL}}uploads/{{slug}}{{myfile.name}}">
+                    <i class="icon-zoom-in icon-white"></i>
+                    {% blocktrans  %}Select{% endblocktrans %}
+                  </a>
+                  <br>
+            {% endif %}
+		{% if is_popup == True %}
+	  		<a class="btn btn-danger" href="{% url "admin:mediamanager_delete_files" slug=slug filename=directory.name %}?popup={{is_popup}">
+        {% else %}
+            <a class="btn btn-danger" href="{% url "admin:mediamanager_delete_files" slug=slug filename=myfile.name %}">
+        {% endif %} 
+		    	{% trans 'Delete' %}
+		   </a>
+	    </div>
+	  </li>
+	 <!--end list images-->
+	{% endfor %}
+  	</ul>
+  	{% else %}
+  	   	<div class="row-fluid">
+            
+            <h1 style="text-align:center;">{% trans 'Sorry but this directory is empty' %}</h1>
+           
+        </div>
+    {% endif %}
+  {% else %}
+  
+  	<h1 style="text-align:center;">{% trans 'Sorry but this directory is not exists' %}</h1>
+  
+  {% endif %}
+  </div>
+</div>
+{% endblock %}
+{% block sidebar %}{% endblock %}

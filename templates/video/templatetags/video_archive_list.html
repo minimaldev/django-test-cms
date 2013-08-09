@@ -1,0 +1,8 @@
+---- begin archive videos ----<br>
+{% for video in archive_videos %}
+	{{video.year}}<br>
+	{% for item in video.items %}	
+		{{item.title}}<br>
+	{% endfor %}
+{% endfor %}
+<br>---- end archive videos ----

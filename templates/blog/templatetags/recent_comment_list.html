@@ -1,0 +1,10 @@
+{% load static %}{% get_static_prefix as STATIC_PREFIX %}
+{% load url from future %}
+
+<ul>
+	{% for comment in comments %}
+	<li>
+	    {{node.email}} - {{node.comment}}
+    </li>
+	{% endfor %}
+</ul>

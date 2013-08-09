@@ -1,0 +1,59 @@
+<VirtualHost *:80>
+    ServerAdmin webmaster@localhost
+    ServerName webdisenoya.com
+    ServerAlias www.webdisenoya.com
+
+
+    #DocumentRoot /home/ubuntu/webdisenoya
+    WSGIScriptAlias / /home/ubuntu/webdisenoya/settings/wsgi.py
+
+    Alias /static/ /home/ubuntu/webdisenoya/media/static/
+    Alias /media/ /home/ubuntu/webdisenoya/media/
+    WSGIDaemonProcess www.webdisenoya.com user=www-data group=www-data processes=1  threads=5
+    WSGIProcessGroup www.webdisenoya.com
+
+    # Allow cross domain @font-face styles for Firefox
+        <FilesMatch "\.(ttf|otf|eot)$">
+                <IfModule mod_headers.c>
+                        Header set Access-Control-Allow-Origin "*"
+                </IfModule>
+        </FilesMatch>
+    <Directory />
+        Options FollowSymLinks
+        AllowOverride None
+    </Directory>
+
+    <Directory /home/ubuntu/webdisenoya/>
+        Options Indexes FollowSymLinks MultiViews
+        AllowOverride None
+        Order allow,deny
+        allow from all
+    </Directory>
+    <Directory /home/ubuntu/webdisenoya/apps/>
+        Order deny,allow
+        Allow from all
+    </Directory>
+    <Directory /home/ubuntu/webdisenoya/settings>
+        Order deny,allow
+        Allow from all
+    </Directory>
+
+    <Directory /home/ubuntu/webdisenoya/static/>
+    Order deny,allow
+    Allow from all
+    </Directory>
+
+    <Directory /home/ubuntu/webdisenoya/media/>
+    Order deny,allow
+    Allow from all
+    </Directory>
+
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+
+    # Possible values include: debug, info, notice, warn, error, crit,
+    # alert, emerg.
+    LogLevel debug
+
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+</VirtualHost>

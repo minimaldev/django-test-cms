@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% load article_tags %}
+
+{% load breadcrumbs %}
+
+{% block content %}
+
+	{% list_archived_articles %}
+
+	{% article_page_list_tag %}
+
+	{% render_breadcrumb_tag %}
+
+	{% article_search_form %}
+	
+	{% list_top_article_tags %}
+
+{% endblock %}

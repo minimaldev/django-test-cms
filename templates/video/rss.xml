@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Webdisenoya rss</title>
+        <link>{{SITE_DOMAIN}}</link>
+        <description>Webdisenoya blog RSS feed</description>
+        <language>es-ve</language>
+        <copyright>Copyright (C) 2012 webdisenoya.com</copyright> 
+        {% load tz %}
+         {% for video in Videos %}       
+        <item>
+            <title>{{video.title}}</title>
+            <description>
+                <![CDATA[
+                 <a href="{% url "apps.blog.views.video_details" year=video.created|date:"Y" month=video.created|date:"m" day=video.created|date:"d" slug=video.slug %}">
+                        <img src="{{SITE_DOMAIN}}{{video.get_default_image_url}}" />
+                </a>
+                <p>
+                     {{video.excerpt}}
+                </p>
+                <a href="{% url "apps.blog.views.video_details" year=video.created|date:"Y" month=video.created|date:"m" day=video.created|date:"d" slug=video.slug %}">Leer mas</a>
+                ]]>               
+            </description>
+            <link>{% url "apps.blog.views.video_details" year=video.created|date:"Y" month=video.created|date:"m" day=video.created|date:"d" slug=video.slug %}</link>
+            <pubDate>{{video.created|date:"D, d M Y H:i:s O" }}</pubDate>
+        </item> 
+             {% endfor %}    
+    </channel>
+</rss>

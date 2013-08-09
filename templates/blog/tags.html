@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% load article_tags %}
+{% block content %}
+---- begin tags article ----<br>
+  {% for article in tag_articles %}
+        {{article.title}}<br>
+  {% endfor %}
+<br>---- end tags article ----
+{% endblock %}

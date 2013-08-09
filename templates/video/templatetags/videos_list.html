@@ -1,0 +1,11 @@
+<br>---> videos
+<ul>
+{% for video in videos %}
+	<li>
+		<a href="{% url "apps.video.views.video_details" slug=video.slug %}">{{video.title}} link1-1</a><br>
+		<a href="{% url "apps.video.views.video_details" id=video.id slug=video.slug %}">{{video.title}} link1-2</a><br>
+		<a href="{% url "apps.video.views.video_details" year=video.created|date:"Y" month=video.created|date:"m" day=video.created|date:"d"  slug=video.slug %}">{{video.title}} link2-1</a><br>
+	    <a href="{% url "apps.video.views.video_details" year=video.created|date:"Y" month=video.created|date:"m" day=video.created|date:"d" id=video.id slug=video.slug %}">{{video.title}} link2-2</a><br>
+	</li>
+{% endfor %}
+</ul>

@@ -1,0 +1,8 @@
+---- begin archive article ----<br>
+{% for article in archive_articles %}
+	{{article.year}}<br>
+	{% for item in article.items %}	
+		{{item.title}}<br>
+	{% endfor %}
+{% endfor %}
+<br>---- end archive article ----

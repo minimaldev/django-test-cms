@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load article_tags %}
+{% load breadcrumbs %}
+
+{% block content %}
+
+       
+     <div  id="blog" class="ten columns">
+      <div>
+        {% render_breadcrumb_tag %}
+      </div>
+      <article>
+      <div class="post">        
+        <div class="date"><time pubdate="pubdate"> {{Notice.created|date:"d" }}<br>{{Notice.created|date:"M" }} </time> </div>
+        <!--<img src="{{Notice.get_default_image_url}}" />-->
+        <header>
+          <h3>{{Notice.title}}</h3>
+        </header>
+        <div class="exceprt">
+          <p>
+          {{Notice.excerpt}}</p>
+        </div>
+        <div class="content">
+         
+          {{Notice.content|escape|safe}}
+        </div>
+        <footer>
+        <div class="social-readmore clearfix"></div>
+        </footer>
+        
+        
+      </div>
+      
+      </article>
+  
+      <form action="" class="commentfom" method="post">
+        <dl>          
+          <dt>{{CommentForm.email.label}}</dt>
+          <dd>{{CommentForm.email}}</dd>
+          <dt>{{CommentForm.comment.label}}</dt>
+          <dd>{{CommentForm.comment}}</dd>
+        </dl>
+       {% csrf_token %}
+       {{CommentForm.parent}}
+      <input type="submit" value="POST Comment">
+  </form>
+     {% list_article_comments %}
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,59 @@
+<VirtualHost *:80>
+    ServerAdmin webmaster@localhost
+    ServerName cmsnuevo.com
+    ServerAlias www.cmsnuevo.com
+
+
+    #DocumentRoot /home/minimaldev/Escritorio/www/cmsnuevo
+    WSGIScriptAlias / /home/minimaldev/Escritorio/www/cmspages/settings/wsgi.py
+
+    Alias /static/ /home/minimaldev/Escritorio/www/cmspages/media/static/
+    Alias /media/ /home/minimaldev/Escritorio/www/cmspages/media/
+    WSGIDaemonProcess www.cmsnuevo.com user=www-data group=www-data processes=1  threads=5
+    WSGIProcessGroup www.cmsnuevo.com
+
+    # Allow cross domain @font-face styles for Firefox
+        <FilesMatch "\.(ttf|otf|eot)$">
+                <IfModule mod_headers.c>
+                        Header set Access-Control-Allow-Origin "*"
+                </IfModule>
+        </FilesMatch>
+    <Directory />
+        Options FollowSymLinks
+        AllowOverride None
+    </Directory>
+
+    <Directory /home/minimaldev/Escritorio/www/cmsnuevo/>
+        Options Indexes FollowSymLinks MultiViews
+        AllowOverride None
+        Order allow,deny
+        allow from all
+    </Directory>
+    <Directory /home/minimaldev/Escritorio/www/cmsnuevo/apps/>
+        Order deny,allow
+        Allow from all
+    </Directory>
+    <Directory /home/minimaldev/Escritorio/www/cmsnuevo/config/>
+        Order deny,allow
+        Allow from all
+    </Directory>
+
+    <Directory /home/minimaldev/Escritorio/www/cmsnuevo/static/>
+    Order deny,allow
+    Allow from all
+    </Directory>
+
+    <Directory /home/minimaldev/Escritorio/www/cmsnuevo/media/>
+    Order deny,allow
+    Allow from all
+    </Directory>
+
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+
+    # Possible values include: debug, info, notice, warn, error, crit,
+    # alert, emerg.
+    LogLevel debug
+
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+</VirtualHost>

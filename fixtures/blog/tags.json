@@ -1,0 +1,132 @@
+[
+  {
+    "model": "blog.BlogTags",
+    "pk": 1,
+    "fields": {
+      "user":1,
+      "name": "Nike",
+      "slug": "nike",
+      "metatitle": "TAg Nike",
+      "metadescription": "Description TAg Nike",
+      "created":"2012-10-24 16:55:29",
+      "modified":"2012-10-24 16:55:29"
+    }
+  },
+  {
+    "model": "blog.BlogTags",
+    "pk": 2,
+    "fields": {
+      "user":1,
+      "name": "Zapatos",
+      "slug": "zapatos",
+      "metatitle": "TAg Zapatos",
+      "metadescription": "Description TAg Zapatos",
+      "created":"2012-10-24 16:55:29",
+      "modified":"2012-10-24 16:55:29"
+    }
+  },
+  {
+    "model": "blog.BlogTags",
+    "pk": 3,
+    "fields": {
+      "user":1,
+      "name": "Mochilas",
+      "slug": "mochilas",
+      "metatitle": "TAg Mochilas",
+      "metadescription": "Description TAg Mochilas",
+      "created":"2012-10-24 16:55:29",
+      "modified":"2012-10-24 16:55:29"
+    }
+  },
+  {
+    "model": "blog.BlogTags",
+    "pk": 4,
+    "fields": {
+      "user":1,
+      "name": "Rirses",
+      "slug": "rirses",
+      "metatitle": "TAg Rirses",
+      "metadescription": "Description TAg Rirses",
+      "created":"2012-10-24 16:55:29",
+      "modified":"2012-10-24 16:55:29"
+    }
+  },
+  {
+    "model": "blog.BlogTags",
+    "pk": 5,
+    "fields": {
+      "user":1,
+      "name": "Rojos",
+      "slug": "rojos",
+      "metatitle": "TAg Rojos",
+      "metadescription": "Description TAg Rojos",
+      "created":"2012-10-24 16:55:29",
+      "modified":"2012-10-24 16:55:29"
+    }
+  },
+  {
+    "model": "blog.BlogTags",
+    "pk": 6,
+    "fields": {
+      "user":1,
+      "name": "Auriculares",
+      "slug": "auriculares",
+      "metatitle": "TAg Auriculares",
+      "metadescription": "Description TAg Auriculares",
+      "created":"2012-10-24 16:55:29",
+      "modified":"2012-10-24 16:55:29"
+    }
+  },
+  {
+    "model": "blog.BlogTags",
+    "pk": 7,
+    "fields": {
+      "user":1,
+      "name": "Skate",
+      "slug": "skate",
+      "metatitle": "TAg Skate",
+      "metadescription": "Description TAg Skate",
+      "created":"2012-10-24 16:55:29",
+      "modified":"2012-10-24 16:55:29"
+    }
+  },
+  {
+    "model": "blog.BlogTags",
+    "pk": 8,
+    "fields": {
+      "user":1,
+      "name": "Musica",
+      "slug": "musica",
+      "metatitle": "TAg Musica",
+      "metadescription": "Description TAg Musica",
+      "created":"2012-10-24 16:55:29",
+      "modified":"2012-10-24 16:55:29"
+    }
+  },
+  {
+    "model": "blog.BlogTags",
+    "pk": 9,
+    "fields": {
+      "user":1,
+      "name": "Hombre",
+      "slug": "hombre",
+      "metatitle": "TAg Hombre",
+      "metadescription": "Description TAg Hombre",
+      "created":"2012-10-24 16:55:29",
+      "modified":"2012-10-24 16:55:29"
+    }
+  },
+  {
+    "model": "blog.BlogTags",
+    "pk": 10,
+    "fields": {
+      "user":1,
+      "name": "Vieja escuela",
+      "slug": "vieja-escuela",
+      "metatitle": "TAg vieja escuela",
+      "metadescription": "Description TAg vieja escuela",
+      "created":"2012-10-24 16:55:29",
+      "modified":"2012-10-24 16:55:29"
+    }
+  }
+]

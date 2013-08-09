@@ -1,0 +1,67 @@
+{% extends "admin/index.html" %}
+{% load i18n %}
+{% load url from future %}
+
+{% block extrafooter %}
+{% endblock %}
+{% block extrastyle %}
+
+{% endblock %}
+ 
+  {% block breadcrumbs %}
+  <ul class="breadcrumb">
+	  <li>     
+	        <a href="{% url "admin:config_home" %}">
+	         	{% trans 'Home' %}
+		    </a>
+	    <span class="divider">/</span> 
+	  </li>
+	
+
+  </ul>
+  {% endblock %}
+
+{% block content %}
+<div class="row-fluid">
+  <div class="span12"> 
+  	<div class="page-header">
+  		<h1>{% trans 'Global config' %}</h1>
+  	</div>
+      <form class="span7 well" action="{% url "admin:save_global_config" %}"  method="post">
+        <fieldset>
+          <legend>{% trans 'Set your config' %}</legend>
+        {% csrf_token %}
+        <div>
+          <label><strong>{{GlobalConfigForm.site_name.label}}</strong></label>
+          
+          {{GlobalConfigForm.site_name}}
+           <span class="help-block">{{GlobalConfigForm.site_name.help_text}}</span>
+          {% if GlobalConfigForm.site_name.errors %}
+            <span class="error">{{ GlobalConfigForm.site_name.errors|join:", " }}</span>
+          {% endif %}
+        </div>
+         <div>
+          <label><strong>{{GlobalConfigForm.site_domain.label}}</strong></label>
+          {{GlobalConfigForm.site_domain}}
+          <span class="help-block">{{GlobalConfigForm.site_domain.help_text}}</span>
+          {% if GlobalConfigForm.site_domain.errors %}
+            <span class="error">{{ GlobalConfigForm.site_domain.errors|join:", " }}</span>
+          {% endif %}
+        </div>
+        <div>
+          <label><strong>{{GlobalConfigForm.site_description.label}}</strong></label>
+           <span class="help-block">{{GlobalConfigForm.site_description.help_text}}</span>
+          {{GlobalConfigForm.site_description}}
+          {% if GlobalConfigForm.site_description.errors %}
+            <span class="error">{{ GlobalConfigForm.site_description.errors|join:", " }}</span>
+          {% endif %}
+        </div>
+        </fieldset>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">{% trans 'Save changes' %}</button>
+        </div>
+	   </form>
+  </div>
+</div>
+{% endblock %}
+{% block sidebar %}{% endblock %}

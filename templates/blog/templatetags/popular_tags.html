@@ -1,0 +1,9 @@
+--------popular tags<br>
+<ul>
+{% for tag in tags %}
+	<li>
+		<a href="{% url "apps.blog.views.articles_tag" slug=tag.tags__slug %}">{{tag.tags__name}}</a>
+	</li>
+{% endfor %}	
+</ul>
+------tags<br>

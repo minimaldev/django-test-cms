@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{% for article in articles %}
+<url>
+	<loc>http://{{SITE_DOMAIN}}{% url "apps.blog.views.article_details" year=article.created|date:"Y" month=article.created|date:"m" day=article.created|date:"d"  slug=article.slug %}</loc>
+	<lastmod>{{article.modified|date:"c" }}</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.2</priority>
+</url>{% endfor %}

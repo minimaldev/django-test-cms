@@ -1,0 +1,46 @@
+{% load i18n %}
+{% if users %}
+<div class="bs-users-login">
+    <table class="table">
+        <thead>
+            <tr>
+              <th>{% trans 'Username' %}</th>
+              <th>{% trans 'E-mail' %}</th>
+              <th>{% trans 'Admin?' %}</th>
+              <th>{% trans 'Super User?' %}</th>
+              <th>{% trans 'Active?' %}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>{{ user }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>    
+                        {% if user.is_staff %}
+                            <span class="label label-info">{% trans 'Administrator' %} </span>
+                        {% else %}
+                           <span class="label label-warning">{% trans 'not admin' %} </span>
+                        {% endif %}
+                    </td>
+                    <td>    
+                        {% if user.is_superuser %}
+                        <span class="label label-inverse"> {% trans 'Super user' %}</span>
+                        {% else %}
+                           <span class="label">{% trans 'User Site' %} </span>
+                      
+                        {% endif %}
+                    </td>
+                    <td>    
+                        {% if user.is_active %}                            
+                            <span class="label label-success">{% trans 'is active' %}</span>
+                        {% else %}
+                            <span class="label label-important">{% trans 'this user is banned' %}</span>                           
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endif %}

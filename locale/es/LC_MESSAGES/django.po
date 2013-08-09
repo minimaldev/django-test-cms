@@ -1,0 +1,749 @@
+# This file is distributed under the same license as the Django package.
+#
+# Translators:
+# Antoni Aloy <antoni.aloy@trespams.com>, 2011, 2012.
+# franchukelly <fcocuadrado@gmail.com>, 2011.
+# Jannis Leidel <jannis@leidel.info>, 2011.
+# Marc Garcia <garcia.marc@gmail.com>, 2011.
+#   <serra.guillem@gmail.com>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: Django\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-12-02 17:46-0430\n"
+"PO-Revision-Date: 2012-03-08 12:29+0000\n"
+"Last-Translator: guillem <serra.guillem@gmail.com>\n"
+"Language-Team: Spanish (Castilian) (http://www.transifex.net/projects/p/"
+"django/language/es/)\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#: apps/blog/admin.py:9 apps/blog/admin.py:29 apps/blog/admin.py:45
+#: apps/catalog/admin.py:30 apps/catalog/admin.py:54 apps/catalog/admin.py:70
+#: apps/catalog/admin.py:88 apps/catalog/admin.py:105
+#: apps/catalog/admin.py:120 apps/catalog/admin.py:135
+#: apps/contacts/admin.py:7 apps/contacts/admin.py:17
+msgid "Basic"
+msgstr "Basico"
+
+#: apps/blog/admin.py:10 apps/catalog/admin.py:34
+msgid "Tags"
+msgstr "Etiquetas"
+
+#: apps/blog/admin.py:11 apps/blog/models/blogcategories.py:46
+#: apps/blog/models/blognotice.py:20 apps/catalog/admin.py:32
+#: apps/catalog/models/categories.py:46 apps/catalog/models/product.py:29
+#: apps/catalog/models/product.py:30 apps/contacts/models.py:22
+#: apps/html/models.py:29 apps/html/models.py:36
+msgid "Categories"
+msgstr "Categorias"
+
+#: apps/blog/admin.py:12 apps/catalog/admin.py:35
+#: apps/catalog/models/product.py:31
+msgid "Related Articles"
+msgstr "Articulos Relacionados"
+
+#: apps/blog/admin.py:13 apps/catalog/admin.py:36
+#, fuzzy
+msgid "Date"
+msgstr "fecha"
+
+#: apps/blog/admin.py:14 apps/blog/admin.py:30 apps/blog/admin.py:46
+#: apps/catalog/admin.py:38 apps/catalog/admin.py:55 apps/catalog/admin.py:71
+#: apps/catalog/admin.py:89 apps/catalog/admin.py:106
+#: apps/catalog/admin.py:121 apps/catalog/admin.py:136
+msgid "Autor"
+msgstr ""
+
+#: apps/blog/admin.py:15 apps/blog/admin.py:31 apps/blog/admin.py:47
+#: apps/catalog/admin.py:39 apps/catalog/admin.py:56 apps/catalog/admin.py:72
+#: apps/catalog/admin.py:90
+msgid "Seo"
+msgstr "Posicionamiento en buscadores"
+
+#: apps/blog/models/blogcategories.py:13 apps/blog/models/blogcomments.py:15
+#: apps/blog/models/blognotice.py:19 apps/blog/models/blogtag.py:8
+#: apps/blog/models/blogtags.py:8 apps/catalog/models/catalogtag.py:8
+#: apps/catalog/models/categories.py:13 apps/catalog/models/customfields.py:17
+#: apps/catalog/models/discounts.py:13 apps/catalog/models/manufacturer.py:13
+#: apps/catalog/models/product.py:28 apps/catalog/models/productratings.py:15
+#: apps/catalog/models/productreviews.py:15 apps/catalog/models/taxes.py:12
+#: apps/contacts/models.py:12 apps/contacts/models.py:27
+msgid "User autor"
+msgstr "Autor"
+
+#: apps/blog/models/blogcategories.py:14 apps/blog/models/blogcomments.py:17
+#: apps/catalog/models/categories.py:14
+#: apps/catalog/models/productreviews.py:17 apps/html/models.py:9
+msgid "Parent"
+msgstr "Pariente Superior"
+
+#: apps/blog/models/blogcategories.py:16 apps/catalog/models/categories.py:16
+#: apps/catalog/models/customfields.py:20 apps/catalog/models/discounts.py:15
+#: apps/catalog/models/manufacturer.py:14
+#: apps/catalog/models/productvariant.py:15 apps/catalog/models/taxes.py:14
+#: apps/contacts/models.py:14 apps/contacts/models.py:30
+#: apps/html/models.py:11
+msgid "Name"
+msgstr "Nombre"
+
+#: apps/blog/models/blogcategories.py:17 apps/blog/models/blognotice.py:33
+#: apps/catalog/models/categories.py:17 apps/catalog/models/manufacturer.py:15
+#: apps/catalog/models/product.py:54 apps/html/models.py:12
+msgid "Thumb"
+msgstr "Imagen Destacada"
+
+#: apps/blog/models/blogcategories.py:18 apps/blog/models/blogcomments.py:19
+#: apps/blog/models/blognotice.py:28 apps/catalog/models/categories.py:18
+#: apps/catalog/models/product.py:39 apps/catalog/models/productreviews.py:19
+msgid "Published"
+msgstr "Publicado"
+
+#: apps/blog/models/blogcategories.py:19 apps/catalog/models/categories.py:19
+#: apps/catalog/models/product.py:37 apps/html/models.py:17
+msgid "Description"
+msgstr "Descripcion"
+
+#: apps/blog/models/blogcategories.py:21 apps/blog/models/blognotice.py:41
+#: apps/blog/models/blogtag.py:12 apps/blog/models/blogtags.py:12
+#: apps/catalog/models/catalogtag.py:12 apps/catalog/models/categories.py:21
+#: apps/catalog/models/manufacturer.py:16 apps/catalog/models/product.py:62
+#: apps/html/models.py:14 apps/html/models.py:41
+msgid "Slug"
+msgstr ""
+
+#: apps/blog/models/blogcategories.py:22 apps/blog/models/blognotice.py:42
+#: apps/blog/models/blogtag.py:13 apps/blog/models/blogtags.py:13
+#: apps/catalog/models/catalogtag.py:13 apps/catalog/models/categories.py:22
+#: apps/catalog/models/manufacturer.py:17 apps/catalog/models/product.py:63
+#: apps/html/models.py:15 apps/html/models.py:42
+msgid "Meta Title"
+msgstr ""
+
+#: apps/blog/models/blogcategories.py:23 apps/blog/models/blognotice.py:43
+#: apps/blog/models/blogtag.py:14 apps/blog/models/blogtags.py:14
+#: apps/catalog/models/catalogtag.py:14 apps/catalog/models/categories.py:23
+#: apps/catalog/models/manufacturer.py:18 apps/catalog/models/product.py:64
+#: apps/html/models.py:16 apps/html/models.py:43
+msgid "Meta Description"
+msgstr ""
+
+#: apps/blog/models/blogcategories.py:25 apps/blog/models/blogcomments.py:22
+#: apps/catalog/models/categories.py:25
+#: apps/catalog/models/productreviews.py:22
+msgid "Level"
+msgstr "Nivel"
+
+#: apps/blog/models/blogcategories.py:26 apps/blog/models/blogcomments.py:23
+#: apps/catalog/models/categories.py:26
+#: apps/catalog/models/productreviews.py:23 apps/html/models.py:22
+msgid "Lft"
+msgstr "Indice"
+
+#: apps/blog/models/blogcategories.py:27 apps/blog/models/blogcomments.py:24
+#: apps/blog/models/blognotice.py:45 apps/blog/models/blogtag.py:16
+#: apps/blog/models/blogtags.py:16 apps/catalog/models/catalogtag.py:16
+#: apps/catalog/models/categories.py:27 apps/catalog/models/customfields.py:24
+#: apps/catalog/models/discounts.py:18 apps/catalog/models/manufacturer.py:19
+#: apps/catalog/models/product.py:66
+#: apps/catalog/models/productdiscounts.py:21
+#: apps/catalog/models/productratings.py:20
+#: apps/catalog/models/productreviews.py:24
+#: apps/catalog/models/producttaxes.py:21
+#: apps/catalog/models/productvariant.py:20 apps/catalog/models/taxes.py:17
+#: apps/contacts/models.py:16 apps/contacts/models.py:36
+#: apps/html/models.py:19 apps/html/models.py:45
+msgid "Created"
+msgstr "Creado"
+
+#: apps/blog/models/blogcategories.py:28 apps/blog/models/blogcomments.py:25
+#: apps/blog/models/blognotice.py:46 apps/blog/models/blogtag.py:17
+#: apps/blog/models/blogtags.py:17 apps/catalog/models/catalogtag.py:17
+#: apps/catalog/models/categories.py:28 apps/catalog/models/customfields.py:25
+#: apps/catalog/models/discounts.py:19 apps/catalog/models/manufacturer.py:20
+#: apps/catalog/models/product.py:67
+#: apps/catalog/models/productdiscounts.py:22
+#: apps/catalog/models/productratings.py:21
+#: apps/catalog/models/productreviews.py:25
+#: apps/catalog/models/producttaxes.py:22
+#: apps/catalog/models/productvariant.py:21 apps/catalog/models/taxes.py:18
+#: apps/contacts/models.py:17 apps/contacts/models.py:37
+#: apps/html/models.py:20 apps/html/models.py:46
+msgid "Modified"
+msgstr "Modificado"
+
+#: apps/blog/models/blogcategories.py:45 apps/catalog/models/categories.py:45
+#: apps/contacts/admin.py:8 apps/contacts/models.py:21
+#: apps/contacts/models.py:28 apps/html/models.py:28
+#, fuzzy
+msgid "Category"
+msgstr "Categorias"
+
+#: apps/blog/models/blogcomments.py:16 apps/blog/models/blognotice.py:51
+msgid "Blog Notice"
+msgstr "Gestor de Noticia"
+
+#: apps/blog/models/blogcomments.py:20 apps/blog/models/blogcomments.py:30
+#: apps/catalog/models/productreviews.py:20
+msgid "Comment"
+msgstr "Comentario"
+
+#: apps/blog/models/blogcomments.py:31
+#, fuzzy
+msgid "Comments"
+msgstr "Comentario"
+
+#: apps/blog/models/blognotice.py:21 apps/blog/models/blogtag.py:25
+#: apps/blog/models/blogtags.py:25
+msgid "Blog Tags"
+msgstr "Etiquetas"
+
+#: apps/blog/models/blognotice.py:22
+#, fuzzy
+msgid "Related Notices"
+msgstr "Articulos Relacionados"
+
+#: apps/blog/models/blognotice.py:25 apps/catalog/models/product.py:35
+#: apps/catalog/models/productimages.py:15
+msgid "Title"
+msgstr "Titulo"
+
+#: apps/blog/models/blognotice.py:26 apps/catalog/models/product.py:36
+msgid "excerpt"
+msgstr "Extracto"
+
+#: apps/blog/models/blognotice.py:27 apps/html/models.py:39
+#, fuzzy
+msgid "Content"
+msgstr "Contactos"
+
+#: apps/blog/models/blognotice.py:30 apps/catalog/models/product.py:52
+msgid "Is Featured"
+msgstr "es Destacado?"
+
+#: apps/blog/models/blognotice.py:31 apps/catalog/models/product.py:45
+msgid "On Feed"
+msgstr "Habilitar en el Feed"
+
+#: apps/blog/models/blognotice.py:34 apps/catalog/models/product.py:55
+msgid "Featured Image"
+msgstr "Imagen Destacado?"
+
+#: apps/blog/models/blognotice.py:36 apps/catalog/models/product.py:57
+#, fuzzy
+msgid "Publish Date"
+msgstr "Publicado el?"
+
+#: apps/blog/models/blognotice.py:38 apps/catalog/models/product.py:59
+#, fuzzy
+msgid "Featured Start Date"
+msgstr "Fecha Inicio"
+
+#: apps/blog/models/blognotice.py:39 apps/catalog/models/product.py:60
+#, fuzzy
+msgid "Featured End Date"
+msgstr "fecha de finalizacion"
+
+#: apps/blog/models/blognotice.py:52
+msgid "Blogs Notices"
+msgstr "Gestor de Noticias"
+
+#: apps/blog/models/blogtag.py:10 apps/blog/models/blogtags.py:10
+#: apps/catalog/models/catalogtag.py:10
+#, fuzzy
+msgid "Tag"
+msgstr "Impuesto"
+
+#: apps/blog/models/blogtag.py:24 apps/blog/models/blogtags.py:24
+msgid "Blog Tag"
+msgstr "Etiqueta"
+
+#: apps/catalog/admin.py:31 apps/catalog/models/manufacturer.py:37
+#: apps/catalog/models/product.py:32
+msgid "Manufacturer"
+msgstr "Fabricante"
+
+#: apps/catalog/admin.py:33 apps/catalog/models/product.py:47
+#: apps/catalog/models/productvariant.py:18
+msgid "Price"
+msgstr "Precio"
+
+#: apps/catalog/admin.py:37
+msgid "Stock"
+msgstr ""
+
+#: apps/catalog/models/catalogtag.py:24
+#, fuzzy
+msgid "Catalog Tag"
+msgstr "Catalogo"
+
+#: apps/catalog/models/catalogtag.py:25
+#, fuzzy
+msgid "Catalog Tags"
+msgstr "Etiquetas"
+
+#: apps/catalog/models/customfields.py:13
+msgid "Colors"
+msgstr "Colores"
+
+#: apps/catalog/models/customfields.py:14
+#, fuzzy
+msgid "Sizes"
+msgstr "Talla"
+
+#: apps/catalog/models/customfields.py:19
+#: apps/catalog/models/productvariant.py:14
+msgid "Type"
+msgstr "Tipo"
+
+#: apps/catalog/models/customfields.py:21
+#: apps/catalog/models/productvariant.py:16
+msgid "Default Value"
+msgstr "Valor"
+
+#: apps/catalog/models/customfields.py:22
+msgid "Is Cart Attribute"
+msgstr "Habilitar Carrito "
+
+#: apps/catalog/models/customfields.py:32
+msgid "Custom Field"
+msgstr "Campo personalizado"
+
+#: apps/catalog/models/customfields.py:33
+msgid "Custom Fields"
+msgstr "Campos personalizados"
+
+#: apps/catalog/models/discounts.py:16 apps/catalog/models/discounts.py:26
+#: apps/catalog/models/productdiscounts.py:15
+#: apps/catalog/models/productdiscounts.py:29
+msgid "Discount"
+msgstr "Descuento"
+
+#: apps/catalog/models/discounts.py:27
+#: apps/catalog/models/productdiscounts.py:30
+msgid "Discounts"
+msgstr "Descuentos"
+
+#: apps/catalog/models/manufacturer.py:38
+msgid "Manufacturers"
+msgstr "Fabricantes"
+
+#: apps/catalog/models/product.py:20
+msgid "Kilograms"
+msgstr "Kilogramos"
+
+#: apps/catalog/models/product.py:21
+msgid "Hectograms"
+msgstr "Hectogramos"
+
+#: apps/catalog/models/product.py:22
+msgid "Decigrams"
+msgstr "Decigramos"
+
+#: apps/catalog/models/product.py:23
+msgid "grams"
+msgstr "gramos"
+
+#: apps/catalog/models/product.py:24
+msgid "centigram"
+msgstr "centigramos"
+
+#: apps/catalog/models/product.py:25
+msgid "milligram"
+msgstr "Miligramos"
+
+#: apps/catalog/models/product.py:38
+msgid "Sku"
+msgstr "Codigo/Sku"
+
+#: apps/catalog/models/product.py:41
+msgid "Quantity"
+msgstr "Cantidad"
+
+#: apps/catalog/models/product.py:42
+msgid "Min Quantity"
+msgstr "Cantidad minima"
+
+#: apps/catalog/models/product.py:43
+msgid "Max Quantity"
+msgstr "Cantidad Maxima"
+
+#: apps/catalog/models/product.py:44
+msgid "Is In Stock"
+msgstr "En el Stock?"
+
+#: apps/catalog/models/product.py:49
+msgid "Weight"
+msgstr "Peso"
+
+#: apps/catalog/models/product.py:50
+msgid "Weight Units"
+msgstr "Unidades de Peso"
+
+#: apps/catalog/models/product.py:73
+#: apps/catalog/models/productdiscounts.py:16
+#: apps/catalog/models/productimages.py:14
+#: apps/catalog/models/productratings.py:16
+#: apps/catalog/models/productreviews.py:16
+#: apps/catalog/models/productvariant.py:12
+msgid "Product"
+msgstr "Producto"
+
+#: apps/catalog/models/product.py:74
+msgid "Products"
+msgstr "Productos"
+
+#: apps/catalog/models/productdiscounts.py:18
+#: apps/catalog/models/producttaxes.py:18
+msgid "Start Date"
+msgstr "Fecha Inicio"
+
+#: apps/catalog/models/productdiscounts.py:19
+#: apps/catalog/models/producttaxes.py:19
+msgid "End Date"
+msgstr "fecha de finalizacion"
+
+#: apps/catalog/models/productimages.py:16
+msgid "Alt"
+msgstr "Texto Alternativo"
+
+#: apps/catalog/models/productimages.py:17
+msgid "Photo"
+msgstr "Seleccionar Imagen"
+
+#: apps/catalog/models/productimages.py:35
+#, fuzzy
+msgid "Product Image"
+msgstr "Ratings Producto"
+
+#: apps/catalog/models/productimages.py:36
+#, fuzzy
+msgid "Product Images"
+msgstr "Tallas del producto"
+
+#: apps/catalog/models/productratings.py:18
+#, fuzzy
+msgid "Starts"
+msgstr "Estrellas"
+
+#: apps/catalog/models/productratings.py:23
+msgid "Product Rating"
+msgstr "Ratings Producto"
+
+#: apps/catalog/models/productratings.py:24
+msgid "Products Ratings"
+msgstr "Ratings Productos"
+
+#: apps/catalog/models/productreviews.py:30
+msgid "Product Review"
+msgstr "Reviews"
+
+#: apps/catalog/models/productreviews.py:31
+msgid "Products Reviews"
+msgstr "Reviews"
+
+#: apps/catalog/models/producttaxes.py:15
+#: apps/catalog/models/producttaxes.py:30 apps/catalog/models/taxes.py:26
+msgid "Taxes"
+msgstr "Impuestos"
+
+#: apps/catalog/models/producttaxes.py:16
+#: apps/catalog/models/producttaxes.py:29 apps/catalog/models/taxes.py:15
+#: apps/catalog/models/taxes.py:25
+msgid "Tax"
+msgstr "Impuesto"
+
+#: apps/catalog/models/productvariant.py:28
+msgid "Product color"
+msgstr "Colores del Producto"
+
+#: apps/catalog/models/productvariant.py:29
+msgid "Product colors"
+msgstr "Colores del producto"
+
+#: apps/contacts/models.py:31
+msgid "Email"
+msgstr ""
+
+#: apps/contacts/models.py:32
+msgid "Website"
+msgstr "Sitio web"
+
+#: apps/contacts/models.py:33
+msgid "Phone"
+msgstr "Telefono"
+
+#: apps/contacts/models.py:34
+msgid "Cell phone"
+msgstr "Telefono celular"
+
+#: apps/contacts/models.py:41
+#, fuzzy
+msgid "Contact"
+msgstr "Contactos"
+
+#: apps/contacts/models.py:42
+msgid "Contacts"
+msgstr "Contactos"
+
+#: apps/html/models.py:49
+msgid "Page"
+msgstr "Pagina"
+
+#: apps/html/models.py:50
+msgid "Pages"
+msgstr "Pagina"
+
+#: apps/menu/filters.py:5
+#, fuzzy
+msgid "Categorias"
+msgstr "Categorias"
+
+#: apps/menu/utils.py:3
+msgid "HTML PAGE"
+msgstr "Pagina Html"
+
+#: apps/menu/utils.py:4
+msgid "HTML CATEGORY"
+msgstr "Categoria Html"
+
+#: apps/menu/utils.py:5
+msgid "BLOG CATEGORY"
+msgstr "Categoria de Blog"
+
+#: apps/menu/utils.py:6
+msgid "BLOG ARTICLE"
+msgstr "Articulo Blog"
+
+#: apps/menu/utils.py:7
+msgid "CONTACT PAGE"
+msgstr "Pagina de Contacto"
+
+#: design/templates/admin/app_index.html:8
+#: design/templates/admin/change_list.html:43
+msgid "Home"
+msgstr "Inicio"
+
+#: design/templates/admin/change_list.html:61
+#, python-format
+msgid "Add %(name)s"
+msgstr "Agregar  %(name)s"
+
+#: design/templates/admin/change_list.html:70
+msgid "Please correct the error below."
+msgid_plural "Please correct the errors below."
+msgstr[0] ""
+msgstr[1] ""
+
+#: design/templates/admin/change_list.html:81
+msgid "Filter"
+msgstr "Filtrar"
+
+#: design/templates/admin/index.html:18
+#, python-format
+msgid "Models available in the %(name)s application."
+msgstr ""
+
+#: design/templates/admin/index.html:31
+msgid "Add"
+msgstr "Agregar"
+
+#: design/templates/admin/index.html:37
+msgid "Change"
+msgstr "Cambiar"
+
+#: design/templates/admin/index.html:47
+msgid "You don't have permission to edit anything."
+msgstr "Usted no tiene permiso para editar cualquier cosa"
+
+#: design/templates/admin/index.html:55
+msgid "Recent Actions"
+msgstr "Acciones Recientes"
+
+#: design/templates/admin/index.html:56
+msgid "My Actions"
+msgstr "Mis Acciones"
+
+#: design/templates/admin/index.html:60
+msgid "None available"
+msgstr "No hay nada disponible"
+
+#: design/templates/admin/index.html:74
+msgid "Unknown content"
+msgstr "Contenido desconocido"
+
+#: design/templates/registration/password_change_done.html:4
+#: design/templates/registration/password_change_done.html:8
+msgid "Password change successful"
+msgstr ""
+
+#: design/templates/registration/password_change_done.html:10
+msgid "Your password was changed."
+msgstr ""
+
+#: design/templates/registration/password_change_form.html:5
+#: design/templates/registration/password_change_form.html:9
+msgid "Password change"
+msgstr ""
+
+#: design/templates/registration/password_change_form.html:11
+msgid ""
+"Please enter your old password, for security's sake, and then enter your new "
+"password twice so we can verify you typed it in correctly."
+msgstr ""
+
+#: design/templates/registration/password_change_form.html:16
+msgid "Old password:"
+msgstr ""
+
+#: design/templates/registration/password_change_form.html:18
+#: design/templates/registration/password_reset_confirm.html:19
+msgid "New password:"
+msgstr ""
+
+#: design/templates/registration/password_change_form.html:20
+#: design/templates/registration/password_reset_confirm.html:21
+msgid "Confirm password:"
+msgstr ""
+
+#: design/templates/registration/password_change_form.html:22
+#: design/templates/registration/password_reset_confirm.html:22
+msgid "Change my password"
+msgstr ""
+
+#: design/templates/registration/password_reset_complete.html:6
+#: design/templates/registration/password_reset_complete.html:10
+msgid "Password reset complete"
+msgstr ""
+
+#: design/templates/registration/password_reset_complete.html:12
+msgid "Your password has been set.  You may go ahead and log in now."
+msgstr ""
+
+#: design/templates/registration/password_reset_complete.html:14
+msgid "Log in"
+msgstr ""
+
+#: design/templates/registration/password_reset_confirm.html:6
+#: design/templates/registration/password_reset_form.html:6
+#: design/templates/registration/password_reset_form.html:10
+msgid "Password reset"
+msgstr ""
+
+#: design/templates/registration/password_reset_confirm.html:12
+msgid "Enter new password"
+msgstr ""
+
+#: design/templates/registration/password_reset_confirm.html:14
+msgid ""
+"Please enter your new password twice so we can verify you typed it in "
+"correctly."
+msgstr ""
+
+#: design/templates/registration/password_reset_confirm.html:27
+msgid "Password reset unsuccessful"
+msgstr ""
+
+#: design/templates/registration/password_reset_confirm.html:29
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a new password reset."
+msgstr ""
+
+#: design/templates/registration/password_reset_done.html:6
+#: design/templates/registration/password_reset_done.html:10
+msgid "Password reset successful"
+msgstr ""
+
+#: design/templates/registration/password_reset_done.html:12
+msgid ""
+"We've e-mailed you instructions for setting your password to the e-mail "
+"address you submitted. You should be receiving it shortly."
+msgstr ""
+
+#: design/templates/registration/password_reset_email.html:2
+msgid "You're receiving this e-mail because you requested a password reset"
+msgstr ""
+
+#: design/templates/registration/password_reset_email.html:3
+#, python-format
+msgid "for your user account at %(site_name)s"
+msgstr ""
+
+#: design/templates/registration/password_reset_email.html:5
+msgid "Please go to the following page and choose a new password:"
+msgstr ""
+
+#: design/templates/registration/password_reset_email.html:9
+msgid "Your username, in case you've forgotten:"
+msgstr ""
+
+#: design/templates/registration/password_reset_email.html:11
+msgid "Thanks for using our site!"
+msgstr ""
+
+#: design/templates/registration/password_reset_email.html:13
+#, python-format
+msgid "The %(site_name)s team"
+msgstr ""
+
+#: design/templates/registration/password_reset_form.html:12
+msgid ""
+"Forgotten your password? Enter your e-mail address below, and we'll e-mail "
+"instructions for setting a new one."
+msgstr ""
+
+#: design/templates/registration/password_reset_form.html:17
+msgid "E-mail address:"
+msgstr "Direccion de Email"
+
+#: design/templates/registration/password_reset_form.html:17
+msgid "Reset my password"
+msgstr "Cambiar mi password"
+
+#: settings/settings.py:44
+msgid "Spanish"
+msgstr "Español"
+
+msgid "Hex Code"
+msgstr "Codigo Hexadecimal"
+
+msgid "Product Size"
+msgstr "Tallas del Producto"
+
+msgid "Catalog"
+msgstr "catalogo"
+
+msgid "catalog"
+msgstr "catalogo"
+
+
+msgid "contacts"
+msgstr "contactos"
+
+msgid "Html"
+msgstr "Paginas"
+
+msgid "html"
+msgstr "Paginas"
+
+msgid "Sites"
+msgstr "Sitios"
+
+msgid "sites"
+msgstr "sitios"
+
+msgid "Auth"
+msgstr "Autorizacion"
+
+msgid "auth"
+msgstr "autorizacion"
+
+msgid "blog"
+msgstr "Noticias Blog"
+
+msgid "Blog"
+msgstr "Noticias Blog"

@@ -1,0 +1,183 @@
+{% load admin_static %}{% load url from future %}<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}  lang="{{ LANGUAGE_CODE|default:"en-us" }}"> <!--<![endif]-->
+<head>
+    <!-- Basic Page Needs
+  ================================================== -->
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    {% block blockbots %}<meta name="robots" content="NONE,NOARCHIVE" />{% endblock %}
+   
+    <!-- Mobile Specific Metas
+  ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" type="text/css" href="{% static "boostrap/css/bootstrap.min.css" %}" />
+    <link rel="stylesheet" type="text/css" href="{% static "boostrap/css/bootstrap-responsive.min.css" %}" />
+    <link rel="stylesheet" type="text/css" href="{% static "admin/css/main.css" %}">
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    {% block extrastyle %}{% endblock %}
+
+    <!-- head scripts
+    ================================================== -->
+    {% if LANGUAGE_BIDI %}<link rel="stylesheet" type="text/css" href="{% block stylesheet_rtl %}{% static "admin/css/rtl.css" %}{% endblock %}" />{% endif %}
+    <script src="{% static "vendor/js/modernizr-2.6.1-respond-1.1.0.min.js" %}"></script>
+     <!--extra head scripts
+    ================================================== -->
+   {% block extrahead %}{% endblock %}
+
+
+  
+   
+    
+</head>
+{% load i18n %}
+<body class="{% if is_popup %}popup {% endif %}{% block bodyclass %}{% endblock %}">
+     
+
+    <!-- Primary Page Layout
+    ================================================== -->
+
+
+    <!-- google frame Layout
+    ================================================== -->
+     <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+       
+
+        {% if not is_popup  %}
+            {% block header%}
+                  <!--  Header
+                ================================================== -->
+             <div class="navbar navbar-inverse navbar-fixed-top">
+                <div class="navbar-inner">
+                    <div class="container">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <a class="brand" href="{% url 'admin:index' %}">{% block branding %}{% endblock %}</a>
+                        <div class="nav-collapse collapse">
+                            {% if user.is_authenticated %}
+                            <ul id="leftnav" class="nav">
+                                  <li class="divider-vertical"></li>
+                               
+                                    <li class="active"><a href="{% url 'admin:index' %}">{% trans 'Home' %}</a></li>
+                               
+                                {% if adm_app_list %}
+                                    {% for adm_app in adm_app_list %}
+                                        {% if adm_app.models|length == 0 %}
+                                        <li>
+                                            <a title="{{ adm_app.name }}" href="{{adm_app.app_url}}">{{ adm_app.name }}</a>
+                                        </li>
+                                        {% else %}
+                                        <li class="dropdown">
+                                            <a  title="{{ adm_app.name }}" href="{{adm_app.app_url}}" class="dropdown-toggle" data-toggle="dropdown">{{adm_app.name}}<b class="caret"></b>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li><a title="{% trans 'Home' %} {adm_app.name}}" href="{{adm_app.app_url}}">{% trans 'Home' %} {{adm_app.name}}</a></li>
+                                                {% for model in adm_app.models %}
+                                                    <li><a title="{{ model.name }}" href="{{model.admin_url}}">{{ model.name }}</a></li>
+                                                {% endfor %}
+                                            </ul>
+                                        </li>
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endif %}
+                            </ul>
+                             
+                            <ul class="nav pull-right">
+                                {% if user.is_active and user.is_staff %}
+                                   
+                                        {% url 'django-admindocs-docroot' as docsroot %}
+                                        {% if docsroot %}
+                                         <li>                                        
+                                            <a class="btn btn-info" href="{{ docsroot }}" >
+                                                <i class="icon-info-sign icon-white"></i>
+                                                {% trans 'Documentation' %}
+                                            </a>                                        
+                                         </li>
+                                        {% endif %}
+                                       
+                                        <li class="divider-vertical"></li>
+                                       
+                                        <li>
+                                            <div class="btn-group">
+                                                <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><i class="icon-user icon-white"></i> {% filter force_escape %}{% firstof user.first_name user.username %}{% endfilter %} <span class="caret"></span></button>
+                                                <ul class="dropdown-menu">
+                                                  <li>
+                                                      <a href="{% url 'admin:auth_user_change' request.user.id %}"><i class="icon-cog"></i> {% trans 'Edit username' %}</a>
+                                                  </li>
+                                                  <li>
+                                                      <a href="{% url 'admin:password_change' %}"><i class="icon-pencil"></i> {% trans 'Change password' %}</a>
+                                                  </li>
+                                                  <li class="divider"></li>
+                                                  <li>
+                                                    <a  href="{% url 'admin:logout' %}"><i class="icon-off"></i> {% trans 'Log out' %}</a>
+                                                  </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                     
+                                {% endif %}                             
+                            </ul>
+                            {%  endif %}
+                        </div><!--/.nav-collapse -->
+                    </div>
+                </div>
+            </div>
+            {% endblock %}
+        {% endif %}
+
+        <!-- Container
+        ================================================== -->
+        <div class="container">
+            
+                 {% block breadcrumbs %}
+                     <!-- Breadcrumbs
+        ================================================== -->
+                  <ul class="breadcrumb">
+                    <li>
+                        <a href="{% url 'admin:index' %}">{% trans 'Home' %}<span class="divider">/</span> </a>
+                    </li>               
+                    <li class="active">{{ title }}</li>
+                  </ul>                    
+                 {% endblock %}
+            
+            {% block messages %}
+            {% if messages %}
+                <ul class="nav nav-stacked ">
+                    {% for message in messages %}
+                    <li{% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %}><button type="button" class="close" data-dismiss="alert">×</button>
+                    {{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            {% endblock messages %}
+            {% block content %}
+            {% block object-tools %}{% endblock %}
+            {{ content }}
+            {% endblock %}
+        </div>
+
+        <!-- scritps
+    ================================================== -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+
+    <script type="text/javascript">window.__admin_media_prefix__ = "{% filter escapejs %}{% static "admin/" %}{% endfilter %}";</script>
+    <script src="{% static "boostrap/js/bootstrap.min.js" %}"></script>
+    {% block extrafooter %}{% endblock %}
+<!-- End Document
+================================================== -->
+
+</body>
+</html>

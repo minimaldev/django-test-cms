@@ -1,0 +1,47 @@
+[
+  {
+    "model": "blog.BlogCategories",
+    "pk": 1,
+    "fields": {     
+      "parent":null,
+      "title": "Camisas",
+
+      "created":"2012-07-13 13:55:29",
+      "modified":"2012-07-13 13:55:29",
+      "lft":1,
+      "rght":4,
+      "level":0,
+      "tree_id":1
+    }
+  },
+  {
+    "model": "blog.BlogCategories",
+    "pk": 2,
+    "fields": {
+      "user":1,
+      "parent":null,
+      "title": "zapatos",
+      "created":"2012-07-13 13:55:29",
+      "modified":"2012-07-13 13:55:29",
+      "lft":2,
+      "rght":3,
+      "level":1,
+      "tree_id":1
+    }
+  },
+  {
+    "model": "blog.BlogCategories",
+    "pk": 3,
+    "fields": {
+      "user":1,
+      "parent":null,
+      "title": "gorras",
+      "created":"2012-07-13 13:55:29",
+      "modified":"2012-07-13 13:55:29",
+      "lft":1,
+      "rght":2,
+      "level":0,
+      "tree_id":2
+    }
+  }
+]

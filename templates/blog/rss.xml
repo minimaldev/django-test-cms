@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>{{SITE_NAME}} RSS feed</title>
+        <link>{{SITE_DOMAIN}}</link>
+        <description>{{SITE_NAME}} {{SITE_DESCRIPTION}} </description>
+        <language>es-ve</language>
+        <copyright>Copyright (C) {% now "Y" %} {{SITE_DOMAIN}}</copyright> 
+        {% for article in Articles %}       
+        <item>
+            <title>{{article.title}}</title>
+            <description>
+                <![CDATA[
+                {% if article.featured_image|length > 0 %}
+                <a href="{% url "apps.blog.views.article_details" year=article.created|date:"Y" month=article.created|date:"m" day=article.created|date:"d" slug=article.slug %}">
+                        
+                        <img src="{{SITE_DOMAIN}}{{article.featured_image}}" />
+                       
+                </a>
+                {% endif %}
+                {% if article.video|length > 0 %}
+                    {{article.video}}                                 
+                {% endif %}
+                {% if article.excerpt|length > 0 %}                    
+                    <p>
+                        <i>
+                         {{article.excerpt}}
+                        </i>
+                    </p>                                 
+                {% endif %}
+                {{article.content|escape|safe}}
+                <a href="{% url "apps.blog.views.article_details" year=article.created|date:"Y" month=article.created|date:"m" day=article.created|date:"d" slug=article.slug %}">Leer en el sitio</a>
+                ]]>               
+            </description>
+            <link>{% url "apps.blog.views.article_details" year=article.created|date:"Y" month=article.created|date:"m" day=article.created|date:"d" slug=article.slug %}</link>
+            <pubDate>{{article.created|date:"D, d M Y H:i:s O" }}</pubDate>
+        </item> 
+    {% endfor %}    
+    </channel>
+</rss>

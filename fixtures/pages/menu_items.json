@@ -1,0 +1,66 @@
+[
+  {
+    "model": "pages.MenuItems",
+    "pk": 1,
+    "fields": {     
+      "parent":null,
+      "menu":1,
+      "publish":true,
+      "title":"home",
+      "description":"sample description",
+      "slug":"home",
+      "metatitle":"home",
+      "metadescription":"meta description",  
+      "description":"sample description",
+      "created":"2012-07-13 13:55:29",
+      "modified":"2012-07-13 13:55:29",
+      "lft":1,
+      "rght":4,
+      "level":0,
+      "tree_id":1
+    }
+  },
+   {
+    "model": "pages.MenuItems",
+    "pk": 2,
+    "fields": {     
+      "parent":1,
+      "menu":1,
+      "publish":true,
+      "title":"subpage",
+      "description":"sample description",
+      "slug":"subpage",
+      "metatitle":"subpage",
+      "metadescription":"meta description",  
+      "description":"sample description",
+      "created":"2012-07-13 13:55:29",
+      "modified":"2012-07-13 13:55:29",
+      "lft":2,
+      "rght":3,
+      "level":1,
+      "tree_id":1
+    }
+  }
+  ,
+   {
+    "model": "pages.MenuItems",
+    "pk": 3,
+    "fields": {     
+      "parent":1,
+      "menu":1,
+      "publish":true,
+      "title":"video",
+      "description":"sample description",
+      "slug":"video",
+      "metatitle":"video",
+      "metadescription":"meta description",  
+      "description":"sample description",
+      "created":"2012-07-13 13:55:29",
+      "modified":"2012-07-13 13:55:29",
+      "lft":1,
+      "rght":2,
+      "level":0,
+      "tree_id":2
+    }
+  }
+]

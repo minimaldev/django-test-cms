@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% load widget_tweaks %}
+
+{% load set_var increment  %}
+{% load static %}{% get_static_prefix as STATIC_PREFIX %}
+{% block pageclass %}class="bgWhite"{% endblock %}
+{% load i18n %}
+
+
+{% block breadcrumbs %}<div class="breadcrumbs"></div>{% endblock %}
+
+
+{% block title %}{% trans 'Registration complete' %}{% endblock %}
+
+{% block content %}
+  <div class="main-container">
+            <div class="main wrapper clearfix">
+            <div id="AddtoCart" class="empty">
+                <div class="items"></div>
+                <a href="#" class="down"></a>
+            </div>
+            <div class="pageDetails">
+               
+                <div >
+                   
+                    <div class="Forms clearfix">
+					<h3>{% trans 'Check your email' %}</h3>
+
+					<p>{% trans "An activation link has been sent to the email address you supplied, along with instructions for activating your account." %}</p>
+
+<p><a class="red" href="{% url auth_login %}">{% trans 'Log in' %}</a></p>
+
+                    </div>
+                </div>
+            </div>
+    
+   
+            </div> <!-- #main -->
+        </div> <!-- #main-container -->
+
+
+
+
+{% endblock %}

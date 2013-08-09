@@ -1,0 +1,86 @@
+{% load widget_tweaks %}
+<section id="contact" >
+      <div id="item"  class="row">
+         <h3>
+             Contacto
+             <hr/>
+         </h3>
+         <p>Si tienes un proyecto interesante para nosotros puedes entrar en contacto con nosotros en:</p>
+        {% if form.errors %}
+            <p class="error">OOPS, al parecer hemos encontrado un par de errores</p>
+            
+        {% endif %}
+                   
+         <form method="post" >
+             {% csrf_token %}
+             <legend>
+                 <em>*</em> Complete los campos del formulario y nos comunicaremos a la brevedad
+             </legend>
+             <div class="col-4 thumb">
+
+                 {{ form.name|attr:"placeholder: Nombre"  }}
+                  {% if form.name.errors %}
+                    <span class="error">{{ form.name.errors|join:", "}}</span>
+                  {% endif %}
+                  {{ form.company|attr:"placeholder: Empresa"  }}
+                  {% if form.company.errors %}
+                    <span class="error">{{ form.company.errors|join:", "}}</span>
+                  {% endif %}
+                  {{ form.phone|attr:"placeholder: teléfono"  }}
+                  {% if form.phone.errors %}
+                    <span class="error">{{ form.phone.errors|join:", "}}</span>
+                  {% endif %}
+            
+                  {{ form.email|attr:"placeholder: Dirección de email"  }}
+                  {% if form.email.errors %}
+                    <span class="error">{{ form.email.errors|join:", "}}</span>
+                  {% endif %}
+                  {{ form.website|attr:"placeholder: Sitio web"  }}
+                  {% if form.website.errors %}
+                    <span class="error">{{ form.website.errors|join:", "}}</span>
+                  {% endif %}
+            
+                 <div class="select">
+                     <a  class="selectitem" href="#selecitem"><i class="icon-chevron-left"></i></a>
+                     <ul>
+                        {% for category in Categories%}
+                         <li><a href="#">{{category.name}}</a></li>
+                        {% endfor %}
+                         
+                     </ul>
+                    
+                      
+                    {{ form.where_met|attr:"placeholder: Donde nos conocio"  }}
+                    
+                
+                 </div>
+                     {% if form.where_met.errors %}
+                        <span class="error">{{ form.where_met.errors|join:", "}}</span>
+                      {% endif %}
+                
+             </div>
+             <div class="col-5">
+                
+                {{ form.message|attr:"placeholder: Mensaje"  }}
+                {% if form.message.errors %}
+                    <span class="error">{{ form.message.errors|join:", "}}</span>
+                {% endif %}
+             </div>
+             <div class="col-12">
+                 <button type="submit">
+                     Enviar
+                 </button>
+             </div>
+         </form>
+         <div class="col-12">
+             <ul class="social">
+                
+                 <li class="facebook"><a title="Facebook" href="https://www.facebook.com/webdisenoya">Facebook</a></li>
+               
+                 <li class="pinterest"><a title="pinterest" href="http://pinterest.com/webdisenoya/">pinterest</a></li>
+
+             </ul>        
+         </div>
+      </div>
+ </section> 
+  

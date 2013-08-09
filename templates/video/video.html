@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load video_tags %}
+{% load breadcrumbs %}
+
+{% block content %}
+
+       
+     <div  id="blog" class="ten columns">
+      <div>
+        {% render_breadcrumb_tag %}
+      </div>
+      <article>
+      <div class="post">        
+        <div class="date"><time pubdate="pubdate"> {{Video.created|date:"d" }}<br>{{Video.created|date:"M" }} </time> </div>
+        <!--<img src="{{Video.get_default_image_url}}" />-->
+        <header>
+          <h3>{{Video.title}}</h3>
+        </header>
+        <div class="exceprt">
+          <p>
+          {{Video.excerpt}}</p>
+        </div>
+        <div class="content">
+         
+          {{Video.content|escape|safe}}
+        </div>
+        <footer>
+        <div class="social-readmore clearfix"></div>
+        </footer>
+        
+        
+      </div>
+      
+      </article>
+
+    </div>
+
+
+{% endblock %}

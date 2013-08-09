@@ -1,0 +1,118 @@
+{% extends "admin/base_site.html" %}
+{% load i18n admin_static %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/dashboard.css" %}" />{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}dashboard{% endblock %}
+
+
+
+{% block content %}
+
+<div class="row-fluid">
+  <div class="span4">
+  	<div class="well well-small">
+  		<div class="module-title nav-header">
+  			{% trans 'Quick ACtions' %}
+  		</div>
+  		<div class="row-striped">
+			{% if app_list %}
+			    {% for app in app_list %}
+			     {% for model in app.models %}
+			     <div class="row-fluid">
+			     	<div class="span12">
+			     		<a  href="{{ model.add_url }}"><span class="btn"><i class="icon-plus"></i></span>  {% trans 'Add' %} {{ model.name }}</a>
+			     	</div>
+			     </div>
+			     {% endfor %}
+			    {% endfor %}
+			{% else %}
+			  <p>{% trans "You don't have permission to edit anything." %}</p>
+			{% endif %}
+		</div>
+	</div>
+  </div>
+  <div class="span8">
+    {% load user_utils %}
+    {% render_logged_in_user_list %}
+  </div>
+</div>
+<div class="row-fluid">
+  <div class="row span12 ">
+    <h2>{% trans 'Recent Actions' %}</h2>
+
+    <div class="bs-users-actions">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>{% trans 'User' %} </th>
+            <th>{% trans 'Content Type' %}</th>
+            <th>{% trans 'Action' %}</th>
+          </tr>
+        </thead>
+        <tbody>
+        
+          {% load log %}
+          
+           
+          {% get_admin_log 10 as admin_log for_user user %}
+          {% if not admin_log %}
+            <p>{% trans 'None available' %}</p>
+          {% else %}
+          {% for entry in admin_log %}
+           {% if  not entry.get_admin_url %}
+            <tr>
+              <td> 
+               
+
+               
+                    {{ entry.object_repr }}
+                
+               
+              
+              </td>
+              <td>
+                {% if entry.content_type %}
+               
+                   <a href="{% url 'admin:app_list' app_label=entry.content_type.app_label %}">{% filter capfirst %}{% trans entry.content_type.name %}{% endfilter %}</a>
+                {% else %}
+                    <span class="mini quiet">{% trans 'Unknown content' %}</span>
+                {% endif %}
+              </td>
+              <td>
+                {% if entry.is_deletion or not entry.get_admin_url %}
+                    {% trans 'Delete' %}
+                {% else %}
+                <a href="{{ entry.get_admin_url }}"> 
+                  {% if entry.is_addition %}
+                    {% trans 'Add' %}
+                  {% endif %}
+                  {% if entry.is_change %}
+                    {% trans 'Change' %}
+                  {% endif %}
+                  {% if entry.is_deletion %}
+                    {% trans 'Delete' %}
+                  {% endif %}
+                </a>
+                   {% endif %}
+              </td>
+            </tr>
+              {% endif %}
+          {% endfor %}
+          {% endif %}
+        </tbody>
+      </table>
+        
+        
+       
+    
+    
+         
+    </div>
+ 		
+     
+  </div>
+</div>
+{% endblock %}

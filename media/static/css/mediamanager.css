@@ -1,0 +1,25 @@
+.mediaimage{
+	margin-bottom: 15px;
+	text-align: center;
+}
+.mediaimage a { margin-bottom: 5px}
+#uploadfile
+{
+	display: none;
+}
+ul.thumbnails li[class*="span"]
+{
+	display: inline-block;
+	float: none;
+	vertical-align: top;
+	margin-left: 1.564103%;
+	text-align: center;
+}
+ul.thumbnails li[class*="span"]:first-child
+{
+	margin-left: 1.564103%;
+}
+ul.thumbnails li[class*="span"] a
+{
+	display: block;
+}

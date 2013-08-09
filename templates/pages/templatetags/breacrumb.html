@@ -1,0 +1,23 @@
+{% load static %}{% get_static_prefix as STATIC_PREFIX %}
+{% load url from future %}
+{% load mptt_tags %}
+
+{% for node in  breadcrumb %}
+
+  
+  {% if not forloop.last %}
+   <a href="{% url "apps.pages.views.custom_page" slug=node.slug %}">{{node.title}}</a>    >
+  {% endif %}
+  {% if forloop.last and last_item %}
+    
+      <a href="{% url "apps.pages.views.custom_page" slug=node.slug %}">{{node.title}}</a> > {{last_item}}
+  {% else %} 
+  {% if not forloop.last and not last_item %}
+  	{{node.title}}
+  {% endif %}
+  {% endif %}
+{% endfor %}
+
+
+
+

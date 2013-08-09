@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% load article_tags %}
+{% block content %}
+---- begin searc article ----<br>
+  {% for article in search_articles %}
+        {{article.title}}<br>
+  {% endfor %}
+<br>---- end searc article ----
+{% endblock %}

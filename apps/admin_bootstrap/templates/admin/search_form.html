@@ -1,0 +1,23 @@
+{% load i18n admin_static %}
+{% load admin_urlss %}
+
+{% if cl.search_fields %}
+<div id="toolbar"><form id="changelist-search" action="" class="form-search" method="get">
+<div><!-- DIV needed for valid HTML -->
+
+<input type="text" size="40"  class="input-large search-query" placeholder="{% trans 'Search' %}" name="{{ search_var }}" value="{{ cl.query }}" id="searchbar" />
+
+<button type="submit" class="btn btn-inverse"><i class="icon-search icon-white"></i></button>
+<a class="btn" href="{% admin_change_list_url cl.opts.app_label cl.opts.module_name %}">
+	{% trans 'Reset' %}
+</a>
+{% if show_result_count %}
+    <span class="small quiet">{% blocktrans count counter=cl.result_count %}{{ counter }} result{% plural %}{{ counter }} results{% endblocktrans %} (<a href="?{% if cl.is_popup %}pop=1{% endif %}">{% blocktrans with full_result_count=cl.full_result_count %}{{ full_result_count }} total{% endblocktrans %}</a>)</span>
+{% endif %}
+{% for pair in cl.params.items %}
+    {% ifnotequal pair.0 search_var %}<input type="hidden" name="{{ pair.0 }}" value="{{ pair.1 }}"/>{% endifnotequal %}
+{% endfor %}
+</div>
+</form></div>
+<script type="text/javascript">document.getElementById("searchbar").focus();</script>
+{% endif %}

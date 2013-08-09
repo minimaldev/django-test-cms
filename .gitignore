@@ -1,0 +1,3 @@
+*.pyc
+ENV1/*
+media/uploads/*

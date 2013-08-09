@@ -1,0 +1,12 @@
+Sitemap: http://{{SITE_DOMAIN}}/sitemap.xml
+Sitemap: http://{{SITE_DOMAIN}}/post-sitemap.xml
+Sitemap: http://{{SITE_DOMAIN}}/sections-sitemap.xml
+Sitemap: http://{{SITE_DOMAIN}}/post_tag-sitemap.xml
+
+User-agent: *
+Disallow: /media/static/js/
+Disallow: /media/static/css/
+Disallow: /terms/
+Disallow: /privacy-policy/
+Disallow: /contact/
+Disallow: /about/refer-a-friend/

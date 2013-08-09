@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load widget_tweaks %}
+{% load set_var increment  %}
+{% load static %}{% get_static_prefix as STATIC_PREFIX %}
+{% block pageclass %}class="bgWhite"{% endblock %}
+{% block title %}Log in{% endblock %}
+
+{% block content %}
+
+  <div class="main-container">
+            <div class="main wrapper clearfix">
+            <div id="AddtoCart" class="empty">
+                <div class="items"></div>
+                <a href="#" class="down"></a>
+            </div>
+            <div class="pageDetails">
+               
+                <div >
+                   
+                    <div class="Forms clearfix">
+                        <form id="MyAccount" class="clearfix" method="post" action="?next={{ next|default:"/" }}">{% csrf_token %}
+                    
+                             <h3>Mi cuenta</h3>
+                             {% if form.errors %}
+								<span class="error">Please correct the errors below:</span>
+								{% endif %}
+                            {{ form.username|attr:"placeholder:tu usuario" }}
+                            {% if form.username.errors %}<span class="error">{{ form.username.errors|join:", " }}</span>{% endif %}
+                            {{ form.password|attr:"placeholder:tu password" }}
+
+                            {% if form.password.errors %}<span class="error">{{ form.password.errors|join:", " }}</span>{% endif %}
+                            <label>Perdio su contrace&ntilde;a <a href="{% url auth_password_reset %}">Click Aqui</a></label>
+                            <button  type="submit">
+                                Login
+                            </button>
+                        </form>
+                        <form method="post" action="{% url registration_register %}" id="Register" class="clearfix">
+                             <h3>Registro</h3>
+                             {% csrf_token %}
+                    
+                            <input type="text" placeholder="* Tu usuario" 
+                            id="id_username" name="username" maxlength="30"  />
+                            <input type="text" placeholder="* Tu email" 
+                             id="id_email" name="email" maxlength="75" />
+                            <input type="text" placeholder="* Tu password" 
+                             id="id_password1" class="required" name="password1"
+                            />
+                            <input type="text" placeholder="* Repetir password " id="id_password2" class="required" name="password2" />
+                       
+                            <button type="submit">
+                                Registro
+                            </button>
+                        </form>
+                        <div class="Social">
+                            <h3>Tambien Somos sociales</h3>
+                            <img src="{{STATIC_PREFIX}}images/login_twitter.png" />
+                            <img src="{{STATIC_PREFIX}}images/login_google.png" />
+                            <img src="{{STATIC_PREFIX}}images/login_facebook.png" />
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+    
+   
+            </div> <!-- #main -->
+        </div> <!-- #main-container -->
+     
+{% endblock %}
+
+{% block content-related %}
+<p>If you don't have an account, you can <a href="/accounts/register/">sign
+up</a> for one.
+{% endblock %}

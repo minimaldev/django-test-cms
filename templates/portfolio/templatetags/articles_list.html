@@ -1,0 +1,68 @@
+<br>
+{% for article in articles %}
+	<a href="{% url "apps.blog.views.article_details" slug=article.slug %}">{{article.title}} link1-1</a><br>
+	<a href="{% url "apps.blog.views.article_details" id=article.id slug=article.slug %}">{{article.title}} link1-2</a><br>
+	<a href="{% url "apps.blog.views.article_details" year=article.created|date:"Y" month=article.created|date:"m" day=article.created|date:"d"  slug=article.slug %}">{{article.title}} link2-1</a><br>
+    <a href="{% url "apps.blog.views.article_details" year=article.created|date:"Y" month=article.created|date:"m" day=article.created|date:"d" id=article.id slug=article.slug %}">{{article.title}} link2-2</a><br>
+{% endfor %}
+
+    <section id="portfolio">
+        <div  class="row">
+             <section id="content" class="col-10">
+                <h3 >Portafolio
+                    <hr/>
+                </h3>
+                <p>
+                    Te ayudamos a lanzar tu sitio web con el mejor diseño personalizado que sastisfaga tus necesidades.
+                </p>
+                <a class="link" href="#contact">Se el primero en probar nuestros servicios</a>
+                <ul class="portfolio-categories">
+                    <li>
+                      <a class="active" href="#">Todos</a>
+                    </li>
+                    <li >                    
+                        <a href="#">Web</a>
+                    </li>
+                    <li >
+                       <a href="#">Mobile</a>
+                    </li>
+                </ul>
+                <ul class="portfolio">
+                    <li class="Web Todos">
+                      <a style="background:url(images/portfolio/test.png);"></a>
+                    </li>
+                    <li class="Web Todos">                    
+                      <a  class="active" style="background:url(images/portfolio/test.png);"></a>
+                    </li>
+                    <li class="Mobile Todos">
+                        <a style="background:url(images/portfolio/test.png);"></a>
+                    </li>
+                    <li class="Mobile Todos">
+                        <a style="background:url(images/portfolio/test.png);"></a>
+                    </li> 
+                    <li class="Web Todos">
+                        <a style="background:url(images/portfolio/test.png);"></a>
+                    </li>
+                    <li class="Mobile Todos">
+                        <a style="background:url(images/portfolio/test.png);"></a>
+                    </li>
+                </ul>
+            </section>
+        </div>
+            <section id="porfolio-details" >
+                 <div id="item"  class="row">
+
+                    <div class="col-3 thumb">
+                        <img src="images/portfolio/test.png">
+                    </div>
+
+                    <div id="description" class="col-5">
+                        <a  href="#" class="remove"><i class="icon-remove-sign"></i></a>
+                        <h3>Carrois Gothic SC</h3>
+                        <p>Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb.</p>
+                        <a class="link" href="#"> VER SITIO</a>
+                    </div>
+                 </div>
+            </section>
+     
+    </section>
